@@ -1,8 +1,9 @@
 from selenium import webdriver
 import time
+import os
 
 try: 
-    link = "http://suninjuly.github.io/registration2.html"
+    link = "http://suninjuly.github.io/file_input.html"
     browser = webdriver.Chrome()
     browser.get(link)
 
