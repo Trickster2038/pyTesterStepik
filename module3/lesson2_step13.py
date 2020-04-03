@@ -3,7 +3,7 @@ import time
 import unittest
 
 class TestReg(unittest.TestCase):
-    def test1(self):
+    def test_t1(self):
         link = "http://suninjuly.github.io/registration1.html"
         browser = webdriver.Chrome()
         browser.get(link)
@@ -37,7 +37,7 @@ class TestReg(unittest.TestCase):
         #assert "Congratulations! You have successfully registered!" == welcome_text
         self.assertEqual(welcome_text, "Congratulations! You have successfully registered!", 
             "Should be welcome message")
-    def test2(self):
+    def test_t2(self):
         link = "http://suninjuly.github.io/registration2.html"
         browser = webdriver.Chrome()
         browser.get(link)
