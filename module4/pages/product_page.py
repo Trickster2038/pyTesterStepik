@@ -31,3 +31,22 @@ class ProductPage(BasePage):
         
         assert f"{namet} был добавлен в вашу корзину." in name1.text, "Name notification bug"
         assert costt in cost1.text, "Cost notification bug"
+    
+    def no_msg_after(self):
+        button = self.browser.find_element(*ProductPageLocators.ADD_BUTTON)
+        button.click()
+        self.solve_quiz_and_get_code()
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+       "Success message is presented, but should not be"
+
+    def no_msg(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+       "Success message is presented, but should not be"
+
+    def no_msg_after_time(self):
+        button = self.browser.find_element(*ProductPageLocators.ADD_BUTTON)
+        button.click()
+        self.solve_quiz_and_get_code()
+        time.sleep(1)
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+       "Success message is presented, but should not be"

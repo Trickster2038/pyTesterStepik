@@ -14,3 +14,4 @@ class ProductPageLocators():
 	COST = (By.CSS_SELECTOR, ".product_main .price_color")
 	NAME1 = (By.CSS_SELECTOR, ".alert-success")
 	COST1 = (By.CSS_SELECTOR, ".alert-info")
+	SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
